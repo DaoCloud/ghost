@@ -1,129 +1,40 @@
 # Ghost Blog
 
-应用“Ghost Blog”来自于Github项目[TryGhost/Ghost](https://github.com/TryGhost/Ghost)，你可以用MarkDown写出最有逼格的Blog。
+还再用WordPress做你的博客站点，你就OUT了！速度切换到Ghost，用MarkDown写出最有逼格的技术博客吧。 这个出自于WordPress前UX部门开发者/设计师John O’Nolan之手的博客系统，自2012年诞生之日起就被冠于类似“WordPress Killer”, the “new direction of blogging”, “the first exciting thing to happen to blogging in years”之类的头衔。 
 
-## 启动容器
+关于WordPress和Ghost的比较大家可以参见［WordPress VS Ghost（英文）］（http://www.elegantthemes.com/blog/resources/wordpress-vs-ghost）
 
-* 创建一个MySQL服务
-* 从最新镜像启动容器
-* 绑定创建的MySQL服务，并设置服务别名为'**mysql**'
+如果你动心了的话，马上用1分钟在DaoCloud上部署一个属于你的高逼格Ghost博客吧！
+
+
+## 创建博客需要的Mysql数据库
+
+![select "Services"](https://github.com/DaoCloud/ghost/blob/master/pic/1-1.png?raw=true)
+
+![select "MySQL Service"](https://github.com/DaoCloud/ghost/blob/master/pic/1-2.png?raw=true)
+
+![create "MySQL Service" instance](https://github.com/DaoCloud/ghost/blob/master/pic/1-3.png?raw=true)
+
+## 从Ghost镜像中创建容器
+
+![select "Images"](https://github.com/DaoCloud/ghost/blob/master/pic/2-1.png?raw=true)
+
+![select "Ghost Image"](https://github.com/DaoCloud/ghost/blob/master/pic/2-2.png?raw=true)
+
+![Create Container from image](https://github.com/DaoCloud/ghost/blob/master/pic/2-3.png?raw=true)
+
+## 绑定MySQL服务，并设置服务别名为'**mysql**'
+
+![configure "Env & Services"](https://github.com/DaoCloud/ghost/blob/master/pic/3-1.png?raw=true)
+
+![bind service and set alias](https://github.com/DaoCloud/ghost/blob/master/pic/3-2.png?raw=true)
+
+## 启动容器并访问Ghost
+
+![run container](https://github.com/DaoCloud/ghost/blob/master/pic/4-1.png?raw=true)
+
+![access Ghost](https://github.com/DaoCloud/ghost/blob/master/pic/4-2.png?raw=true)
 
 ## 配置Blog
 
 第一次启动后，您可以访问 http://your-blog.daoapp.io/admin 进入管理界面。
-
-
-## 原项目介绍
-
-![Ghost Screenshot](https://cloud.githubusercontent.com/assets/120485/6626466/6dae46b2-c8ff-11e4-8c7c-8dd63b215f7b.jpg)
-
-![Ghost is a simple, powerful publishing platform that allows you to share your stories with the world.](https://cloud.githubusercontent.com/assets/120485/6626501/b2bb072c-c8ff-11e4-8e1a-2e78e68fd5c3.png)
-
-The project is maintained by a non-profit organisation called the **Ghost Foundation**, along with an amazing group of independent [contributors](https://github.com/TryGhost/Ghost/contributors). We're trying to make publishing software that changes the shape of online journalism.
-
-- [Ghost.org](https://ghost.org)
-- [Latest Release](https://ghost.org/download/)
-- [Support](http://support.ghost.org/)
-- [Theme Docs](http://themes.ghost.org)
-- [Contributing Guide](https://github.com/TryGhost/Ghost/blob/master/CONTRIBUTING.md)
-- [Feature Requests](http://ideas.ghost.org/)
-- [Dev Blog](http://dev.ghost.org)
-
-
-# Quick Start Install
-
-Make sure you've installed Node.js - We recommend the latest **Node v0.10.x** release.
-
-Ghost is also compatible with **Node v0.12** and **io.js v1.2**, but please note that these versions are more likely to run into installation problems. May contain nuts. Please use the [forum](https://ghost.org/forum/installation/) for help.
-
-1. Download the [latest release](https://ghost.org/download/) of Ghost
-1. Unzip in the location you want to install
-1. Fire up a terminal
-1. `npm install --production`
-1. Start Ghost!
-    - Local environment: `npm start`
-    - On a server: `npm start --production`
-1. `http://localhost:2368/ghost` :tada:
-
-More [install docs](http://support.ghost.org/installation/) here in case you got stuck.
-
-<a name="getting-started"></a>
-# Developer Install (from git)
-
-Install Node.js. 
-
-```bash
-# Node v0.10.x - full support
-# Node v0.12.x and io.js v1.2 - partial support
-#
-# Choose wisely
-```
-
-Clone :ghost:
-
-```bash
-git clone git://github.com/tryghost/ghost.git
-cd ghost
-```
-
-Install grunt. No prizes here.
-
-```bash
-npm install -g grunt-cli
-```
-
-Install Ghost. If you're running locally, use [master](https://github.com/TryGhost/Ghost/tree/master). For production, use [stable](https://github.com/TryGhost/Ghost/tree/stable). :no_entry_sign::rocket::microscope:
-
-```bash
-npm install
-```
-
-Build the things!
-
-```bash
-grunt init
-```
-
-Minify that shit for production?
-
-```bash
-grunt prod
-```
-
-Start your engines.
-
-```bash
-npm start
-
-## running production? Add --production
-```
-
-Congrats! You made it. BTW you can also just `npm install ghost` if you're into that sort of thing. NPM afficionados can also read up on using [Ghost as an NPM module](https://github.com/TryGhost/Ghost/wiki/Using-Ghost-as-an-npm-module).
-
-More general [install docs](http://support.ghost.org/installation/) here in case you got stuck.
-
-
-# Deploying Ghost
-
-The easiest way to deploy Ghost is on our official <strong><a href="https://ghost.org/pricing/">Ghost(Pro)</a></strong> hosted platform. This service funds the Ghost Foundation, which makes actively maintaining this project possible.
-
-Also, you get to save yourself a lot of wasted time and headaches by deploying a new instance of Ghost to a managed server with a global content delivery network in just a few clicks.
-
-[Other options](http://support.ghost.org/deploying-ghost/) are available if you prefer playing around with servers by yourself.
-
-
-# Staying Up to Date
-
-When a new version of Ghost comes out, you'll want to look over these [upgrade instructions](http://support.ghost.org/how-to-upgrade/) for what to do next.
-
-You can talk to other Ghost users on [our forums](https://ghost.org/forum) or chat with Ghost developers in our [public Slack team](https://ghost.org/slack/) (it's pretty awesome). We have a public meeting every Tuesday at 5:30pm London time.
-
-New releases are announced on the [dev blog](http://dev.ghost.org/tag/releases/). You can subscribe by email or follow [@TryGhost_Dev](https://twitter.com/tryghost_dev) on Twitter, if you prefer your updates bite-sized and facetious.
-
-:saxophone::turtle:
-
-
-# Copyright & License
-
-Copyright (c) 2013-2015 Ghost Foundation - Released under the [MIT license](LICENSE).
-
