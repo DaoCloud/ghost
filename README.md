@@ -9,31 +9,31 @@
 
 ## 创建博客需要的Mysql数据库
 
-![select "Services"](https://github.com/DaoCloud/ghost/blob/master/pic/1-1.png?raw=true)
+![select "Services"](https://dn-daoweb-resource.qbox.me/images/ghost/1-1.png)
 
-![select "MySQL Service"](https://github.com/DaoCloud/ghost/blob/master/pic/1-2.png?raw=true)
+![select "MySQL Service"](https://dn-daoweb-resource.qbox.me/images/ghost/1-2.png)
 
-![create "MySQL Service" instance](https://github.com/DaoCloud/ghost/blob/master/pic/1-3.png?raw=true)
+![create "MySQL Service" instance](https://dn-daoweb-resource.qbox.me/images/ghost/1-3.png)
 
 ## 从Ghost镜像中创建容器
 
-![select "Images"](https://github.com/DaoCloud/ghost/blob/master/pic/2-1.png?raw=true)
+![select "Images"](https://dn-daoweb-resource.qbox.me/images/ghost/2-1.png)
 
-![select "Ghost Image"](https://github.com/DaoCloud/ghost/blob/master/pic/2-2.png?raw=true)
+![select "Ghost Image"](https://dn-daoweb-resource.qbox.me/images/ghost/2-2.png)
 
-![Create Container from image](https://github.com/DaoCloud/ghost/blob/master/pic/2-3.png?raw=true)
+![Create Container from image](https://dn-daoweb-resource.qbox.me/images/ghost/2-3.png)
 
 ## 绑定MySQL服务，并设置服务别名为'**mysql**'
 
-![configure "Env & Services"](https://github.com/DaoCloud/ghost/blob/master/pic/3-1.png?raw=true)
+![configure "Env & Services"](https://dn-daoweb-resource.qbox.me/images/ghost/3-1.png)
 
-![bind service and set alias](https://github.com/DaoCloud/ghost/blob/master/pic/3-2.png?raw=true)
+![bind service and set alias](https://dn-daoweb-resource.qbox.me/images/ghost/3-2.png)
 
 ## 启动容器并访问Ghost
 
-![run container](https://github.com/DaoCloud/ghost/blob/master/pic/4-1.png?raw=true)
+![run container](https://dn-daoweb-resource.qbox.me/images/ghost/4-1.png)
 
-![access Ghost](https://github.com/DaoCloud/ghost/blob/master/pic/4-2.png?raw=true)
+![access Ghost](https://dn-daoweb-resource.qbox.me/images/ghost/4-2.png)
 
 ## 配置Blog
 
