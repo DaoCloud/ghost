@@ -1,10 +1,13 @@
 # Ghost Blog
 
-还再用WordPress做你的博客站点，你就OUT了！速度切换到Ghost，用MarkDown写出最有逼格的技术博客吧。 这个出自于WordPress前UX部门开发者/设计师John O’Nolan之手的博客系统，自2012年诞生之日起就被冠于类似“WordPress Killer”, the “new direction of blogging”, “the first exciting thing to happen to blogging in years”之类的头衔。 
+还在用WordPress做你的博客站点，你就OUT了！速度切换到Ghost，用MarkDown写出最有逼格的技术博客吧。 这个出自于WordPress前UX部门开发者/设计师John O’Nolan之手的博客系统，自2012年诞生之日起就被冠于类似“WordPress Killer”, the “new direction of blogging”, “the first exciting thing to happen to blogging in years”之类的头衔。 
 
-关于WordPress和Ghost的比较大家可以参见［WordPress VS Ghost（英文）］（http://www.elegantthemes.com/blog/resources/wordpress-vs-ghost）
+关于WordPress和Ghost的比较大家可以参见[WordPress VS Ghost(英文)](http://www.elegantthemes.com/blog/resources/wordpress-vs-ghost)
 
 如果你动心了的话，马上用1分钟在DaoCloud上部署一个属于你的高逼格Ghost博客吧！
+
+## 版本
+0.6.0
 
 
 ## 创建博客需要的Mysql数据库
