@@ -18,6 +18,7 @@ RUN arch="$(dpkg --print-architecture)" \
 	&& chmod +x /usr/local/bin/gosu
 
 ENV GHOST_SOURCE /usr/src/ghost
+ENV GHOST_ROOT_URL http://change_to_your_url.daoapp.io
 WORKDIR $GHOST_SOURCE
 
 ENV GHOST_VERSION 0.6.0

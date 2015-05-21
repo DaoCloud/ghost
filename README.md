@@ -40,4 +40,6 @@
 
 ## 配置Blog
 
-第一次启动后，您可以访问 http://your-blog.daoapp.io/admin 进入管理界面。
+您可以设置容器环境变量 **GHOST_ROOT_URL** 的值为您容器的具体URL， 例如 http://your－ghost.daoapp.io
+
+第一次启动后，您可以访问 http://your-ghost.daoapp.io/admin 进入管理界面。
