@@ -14,13 +14,35 @@
 
 ### 创建博客需要的 MySQL 数据库
 
+![select "Services"](http://7xltjx.com1.z0.glb.clouddn.com/1.jpeg)
+
+![select "MySQL Service"](http://7xltjx.com1.z0.glb.clouddn.com/2.jpeg)
+
+![create "MySQL Service" instance](http://7xltjx.com1.z0.glb.clouddn.com/3.jpeg)
+
+![specify instance's name](http://7xltjx.com1.z0.glb.clouddn.com/4.jpeg)
+
 ### 从 Ghost 镜像中创建容器
+
+![select "Images"](http://7xltjx.com1.z0.glb.clouddn.com/5.jpeg)
+
+![select "Ghost Image"](http://7xltjx.com1.z0.glb.clouddn.com/6.jpeg)
+
+![deploy the latest version](http://7xltjx.com1.z0.glb.clouddn.com/7.jpeg)
+
+![select 256M container](http://7xltjx.com1.z0.glb.clouddn.com/8.jpeg)
 
 ### 绑定 MySQL 服务
 
 > 注意：需要设置服务别名为 `MYSQL`。
 
+![configure "Env & Services"](http://7xltjx.com1.z0.glb.clouddn.com/9.jpeg)
+
 ### 启动容器并访问 Ghost
+
+![run container](http://7xltjx.com1.z0.glb.clouddn.com/10.jpeg)
+
+![access your Ghost](http://7xltjx.com1.z0.glb.clouddn.com/11.jpeg)
 
 ### 配置 Blog
 
