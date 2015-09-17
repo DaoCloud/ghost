@@ -12,7 +12,9 @@
 
 ## 说明
 
-### 创建博客需要的 MySQL 数据库
+### 部署于 DaoCloud 平台
+
+#### 创建博客需要的 MySQL 数据库
 
 ![select "Services"](http://7xltjx.com1.z0.glb.clouddn.com/1.jpeg)
 
@@ -22,7 +24,7 @@
 
 ![specify instance's name](http://7xltjx.com1.z0.glb.clouddn.com/4.jpeg)
 
-### 从 Ghost 镜像中创建容器
+#### 从 Ghost 镜像中创建容器
 
 ![select "Images"](http://7xltjx.com1.z0.glb.clouddn.com/5.jpeg)
 
@@ -32,23 +34,49 @@
 
 ![select 256M container](http://7xltjx.com1.z0.glb.clouddn.com/8.jpeg)
 
-### 绑定 MySQL 服务
+#### 绑定 MySQL 服务
 
 > 注意：需要设置服务别名为 `MYSQL`。
 
 ![configure "Env & Services"](http://7xltjx.com1.z0.glb.clouddn.com/9.jpeg)
 
-### 启动容器并访问 Ghost
+#### 启动容器并访问 Ghost
 
 ![run container](http://7xltjx.com1.z0.glb.clouddn.com/10.jpeg)
 
 ![access your Ghost](http://7xltjx.com1.z0.glb.clouddn.com/11.jpeg)
 
-### 配置 Blog
+#### 配置 Blog
 
 您需要将环境变量 `GHOST_ROOT_URL` 的值设置为您博客的完整 URL，这样 Ghost 就能正确配置其内部的链接，例如 [http://your-ghost.daoapp.io/](http://your-ghost.daoapp.io/)。
 
 第一次启动时，您可以通过 [http://your-ghost.daoapp.io/admin](http://your-ghost.daoapp.io/admin) 进入管理界面。
+
+---
+
+### 部署于自有主机
+
+您可以使用 Stack 功能将 Ghost 快速快速部署在您的自有主机上，您可以参考下面的 `docker-compose.yml` 文件：
+
+```yaml
+wordpress: 
+  image: daocloud.io/daocloud/dao-ghost:latest 
+  links: 
+    - db:mysql 
+  ports: 
+    - "80" 
+  restart: always 
+db: 
+  image: mysql 
+  environment: 
+    - MYSQL_ROOT_PASSWORD=example 
+    - MYSQL_DATABASE=ghost
+    - MYSQL_USER=ghost
+    - MYSQL_PASSWORD=ghost_db_password
+  restart: always
+```
+
+
 
 ## 注意
 

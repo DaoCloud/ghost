@@ -16,19 +16,17 @@ config = {
         database: {
             client: 'mysql',
             connection: {
-                host: process.env.MYSQL_PORT_3306_TCP_ADDR,
-                user: process.env.MYSQL_ENV_MYSQL_USER,
-                password: process.env.MYSQL_ENV_MYSQL_PASSWORD,
-                database: process.env.MYSQL_ENV_MYSQL_DATABASE,
+                host: process.env.GHOST_MYSQL_HOST,
+                user: process.env.GHOST_MYSQL_USER,
+                password: process.env.GHOST_MYSQL_PASSWORD,
+                database: process.env.GHOST_MYSQL_DATABASE,
                 charset: 'utf8'
             },
             debug: false
         },
 
         server: {
-            // Host to be passed to node's `net.Server#listen()`
             host: '0.0.0.0',
-            // Port to be passed to node's `net.Server#listen()`, for iisnode set this to `process.env.PORT`
             port: '2368'
         },
         
