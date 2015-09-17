@@ -28,6 +28,9 @@ elif [[ -n "$MYSQL_ENV_MYSQL_VERSION" ]]; then
     export GHOST_MYSQL_USER=$MYSQL_ENV_MYSQL_USER
     export GHOST_MYSQL_PASSWORD=$MYSQL_ENV_MYSQL_PASSWORD
     export GHOST_MYSQL_DATABASE=$MYSQL_ENV_MYSQL_DATABASE
+elif [[ -n "$GHOST_MYSQL_HOST" ]]; then
+    echo "info: Using external MySQL serevr."
+    is_mysql=1
 fi
 
 if [[ $is_mysql -eq 1 ]]; then
