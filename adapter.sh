@@ -30,7 +30,7 @@ elif [[ -n "$MYSQL_ENV_MYSQL_VERSION" ]]; then
     export GHOST_MYSQL_DATABASE=$MYSQL_ENV_MYSQL_DATABASE
 fi
 
-if [[ $is_mysl -eq 1 ]]; then
+if [[ $is_mysql -eq 1 ]]; then
     cp "/opt/config_mysql.js" "$GHOST_CONTENT/config.js"
     echo "========================================================================"
     echo "Using these environment variables:"

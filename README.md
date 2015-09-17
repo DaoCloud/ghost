@@ -46,7 +46,7 @@
 
 ![access your Ghost](http://7xltjx.com1.z0.glb.clouddn.com/11.jpeg)
 
-#### 配置 Blog
+#### 配置 Ghost
 
 您需要将环境变量 `GHOST_ROOT_URL` 的值设置为您博客的完整 URL，这样 Ghost 就能正确配置其内部的链接，例如 [http://your-ghost.daoapp.io/](http://your-ghost.daoapp.io/)。
 
@@ -54,17 +54,39 @@
 
 ---
 
-### 部署于自有主机
+### 使用外部的 MySQL 数据库
+
+**当您使用外部的 MySQL 数据库时需要设置下列所有环境变量。**
+
+您可以通过指定下列几个环境变量的值来使用外部的 MySQL 数据库：
+
+- `GHOST_MYSQL_HOST` 数据库主机地址
+- `GHOST_MYSQL_DATABASE` 数据库名
+- `GHOST_MYSQL_USER` 数据库用户名
+- `GHOST_MYSQL_PASSWORD` 数据库密码
+
+可以参考以下例子：
+
+```console
+$ docker run -d -e MYSQL_ROOT_PASSWORD=example -e MYSQL_USER=ghost -e MYSQL_PASSWORD=ghost -e MYSQL_DATABASE=ghost -p 3306:3306 --name mymysql mysql    # 启动了一个 MySQL 实例并暴露端口 3306
+$ docker run -d -e GHOST_MYSQL_HOST=<mysql_host_address> -e GHOST_MYSQL_USER=ghost -e GHOST_MYSQL_PASSWORD=ghost -e GHOST_MYSQL_DATABASE=ghost -P dghost    # 通过环境变量指定要使用数据库的连接方式
+```
+
+---
+
+### 使用 Stack 功能部署 Ghost 于自有主机
 
 您可以使用 Stack 功能将 Ghost 快速快速部署在您的自有主机上，您可以参考下面的 `docker-compose.yml` 文件：
 
 ```yaml
-wordpress: 
+ghost: 
   image: daocloud.io/daocloud/dao-ghost:latest 
   links: 
     - db:mysql 
   ports: 
-    - "80" 
+    - "2368" 
+  volumes:
+    - /path/to/your/ghost/content:/usr/src/ghost/content
   restart: always 
 db: 
   image: mysql 
@@ -76,8 +98,8 @@ db:
   restart: always
 ```
 
-
-
 ## 注意
 
 由于上传的文件如图片等会保存在容器中，容器重新部署可能会导致上传文件的丢失，因此不建议您用 Ghost 存储重要文件。
+
+当您部署于自有主机上时可以通过 Volume 机制挂载宿主机上的目录至容器来做持久化储存。
