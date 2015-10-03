@@ -6,17 +6,22 @@ export GHOST_SOURCE="/usr/src/ghost"
 export GHOST_CONTENT="/usr/src/ghost/content"
 
 is_mysql=0
+has_url=0
 
 if [[ -z "$GHOST_ROOT_URL" ]]; then
     export GHOST_ROOT_URL="http://localhost:2368"
-    echo "warning: You have to specific GHOST_ROOT_URL."
+    echo "warning: You have to specifiy GHOST_ROOT_URL."
+else
+    has_url=1
 fi
 
 if [[ -n "$MYSQL_INSTANCE_NAME" ]]; then
     echo "info: Deploy at DaoCloud."
-    echo "info: Use http://changetoyoururl.daoapp.io temporary."
     is_mysql=1
-    export GHOST_ROOT_URL="http://changetoyoururl.daoapp.io"
+    if [[ $has_url -ne 1 ]]; then
+        export GHOST_ROOT_URL="http://changetoyoururl.daoapp.io"
+        echo "info: Using http://changetoyoururl.daoapp.io temporary."
+    fi
     export GHOST_MYSQL_HOST=$MYSQL_PORT_3306_TCP_ADDR
     export GHOST_MYSQL_USER=$MYSQL_USERNAME
     export GHOST_MYSQL_PASSWORD=$MYSQL_PASSWORD

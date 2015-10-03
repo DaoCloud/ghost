@@ -76,7 +76,7 @@ $ docker run -d -e GHOST_MYSQL_HOST=<mysql_host_address> -e GHOST_MYSQL_USER=gho
 
 ### 使用 Stack 功能部署 Ghost 于自有主机
 
-您可以使用 Stack 功能将 Ghost 快速快速部署在您的自有主机上，您可以参考下面的 `docker-compose.yml` 文件：
+您可以使用 Stack 功能将 Ghost 快速部署在您的自有主机上，您可以参考下面的 `docker-compose.yml` 文件：
 
 **这里使用 Volume 功能挂载宿主机上的 `content` 目录至容器内来做持久化储存。**
 
@@ -89,6 +89,8 @@ ghost:
     - "2368" 
   volumes:
     - /<path_to_your_ghost>/content:/usr/src/ghost/content
+  environment:
+    - GHOST_ROOT_URL=http://<your-blog-url>
   restart: always 
 db: 
   image: mysql 
