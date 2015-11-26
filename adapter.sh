@@ -10,31 +10,31 @@ has_url=0
 
 if [[ -z "$GHOST_ROOT_URL" ]]; then
     export GHOST_ROOT_URL="http://localhost:2368"
-    echo "warning: You have to specifiy GHOST_ROOT_URL."
+    echo "WARNING: You have to specifiy GHOST_ROOT_URL."
 else
     has_url=1
 fi
 
 if [[ -n "$MYSQL_INSTANCE_NAME" ]]; then
-    echo "info: Deploy at DaoCloud."
+    echo "INFO: Deploy at DaoCloud."
     is_mysql=1
     if [[ $has_url -ne 1 ]]; then
         export GHOST_ROOT_URL="http://changetoyoururl.daoapp.io"
-        echo "info: Using http://changetoyoururl.daoapp.io temporary."
+        echo "INFO: Using http://changetoyoururl.daoapp.io temporary."
     fi
     export GHOST_MYSQL_HOST=$MYSQL_PORT_3306_TCP_ADDR
     export GHOST_MYSQL_USER=$MYSQL_USERNAME
     export GHOST_MYSQL_PASSWORD=$MYSQL_PASSWORD
     export GHOST_MYSQL_DATABASE=$MYSQL_INSTANCE_NAME
 elif [[ -n "$MYSQL_ENV_MYSQL_VERSION" ]]; then
-    echo "info: Using linked MySQL."
+    echo "INFO: Using linked MySQL."
     is_mysql=1
     export GHOST_MYSQL_HOST=$MYSQL_PORT_3306_TCP_ADDR
     export GHOST_MYSQL_USER=$MYSQL_ENV_MYSQL_USER
     export GHOST_MYSQL_PASSWORD=$MYSQL_ENV_MYSQL_PASSWORD
     export GHOST_MYSQL_DATABASE=$MYSQL_ENV_MYSQL_DATABASE
 elif [[ -n "$GHOST_MYSQL_HOST" ]]; then
-    echo "info: Using external MySQL serevr."
+    echo "INFO: Using external MySQL serevr."
     is_mysql=1
 fi
 
@@ -51,7 +51,13 @@ if [[ $is_mysql -eq 1 ]]; then
     echo ""
     echo "========================================================================"
 else
-    echo "info: Using sqlite."
+    echo "INFO: Using SQLite."
+    echo "========================================================================"
+    echo "WARNING: Using SQLite maybe will lost your all"
+    echo "         data when you deployed on DaoCloud."
+    echo "         Please use MySQL instead."
+    echo "========================================================================"
+    
     cp "/opt/config_sqlite.js" "$GHOST_CONTENT/config.js"
 fi
 
