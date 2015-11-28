@@ -18,26 +18,6 @@ if [[ "$*" == npm*start* ]]; then
 	fi
 
 	ln -sf "$GHOST_CONTENT/config.js" "$GHOST_SOURCE/config.js"
-	
-	if [ -d "/volume/ghost/images" ]; then
-		rm -rf /usr/src/ghost/content/images
-		ln -s /volume/ghost/images /usr/src/ghost/content/images
-	fi
-
-	if [ -d "/volume/ghost/apps" ]; then
-		rm -rf /usr/src/ghost/content/apps
-		ln -s /volume/ghost/apps /usr/src/ghost/content/apps
-	fi
-
-	if [ -d "/volume/ghost/data" ]; then
-		rm -rf /usr/src/ghost/content/data
-		ln -s /volume/ghost/data /usr/src/ghost/content/data
-	fi
-
-	if [ -d "/volume/ghost/themes" ]; then
-		rm -rf /usr/src/ghost/content/themes
-		ln -s /volume/ghost/themes /usr/src/ghost/content/themes
-	fi
 
 	chown -R user "$GHOST_CONTENT"
 
