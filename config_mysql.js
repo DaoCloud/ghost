@@ -31,10 +31,6 @@ config = {
         },
         
         fileStorage: true,
-        
-        paths: {
-            contentPath: '/volume/ghost/content/'
-        }
     },
 
     // ### Development **(default)**
