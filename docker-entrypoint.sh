@@ -24,4 +24,9 @@ if [[ "$*" == npm*start* ]]; then
 	set -- gosu user "$@"
 fi
 
+rm -rf /usr/src/ghost/content/images
+rm -rf /usr/src/ghost/content/themes
+ln -s /volume/ghost/images /usr/src/ghost/content/images
+ln -s /volume/ghost/themes /usr/src/ghost/content/themes
+
 exec "$@"
