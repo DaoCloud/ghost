@@ -30,7 +30,7 @@ config = {
             port: '2368'
         },
         
-        fileStorage: false
+        fileStorage: true
     },
 
     // ### Development **(default)**
