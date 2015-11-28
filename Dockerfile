@@ -4,8 +4,6 @@ ADD adapter.sh /opt/adapter.sh
 ADD config_mysql.js /opt/config_mysql.js
 ADD config_sqlite.js /opt/config_sqlite.js
 RUN chmod +x /opt/adapter.sh
-COPY docker-entrypoint.sh /entrypoint.sh
 
-VOLUME /volume/ghost/content
 ENTRYPOINT ["/opt/adapter.sh", "/entrypoint.sh"]
 CMD ["npm", "start", "--production"]
