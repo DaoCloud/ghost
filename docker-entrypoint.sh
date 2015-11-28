@@ -26,7 +26,11 @@ fi
 
 rm -rf /usr/src/ghost/content/images
 rm -rf /usr/src/ghost/content/themes
+rm -rf /usr/src/ghost/content/apps
+rm -rf /usr/src/ghost/content/data
 ln -s /volume/ghost/images /usr/src/ghost/content/images
 ln -s /volume/ghost/themes /usr/src/ghost/content/themes
+ln -s /volume/ghost/apps /usr/src/ghost/content/apps
+ln -s /volume/ghost/data /usr/src/ghost/content/data
 
 exec "$@"
