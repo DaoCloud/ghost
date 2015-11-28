@@ -30,7 +30,11 @@ config = {
             port: '2368'
         },
         
-        fileStorage: true
+        fileStorage: true,
+        
+        paths: {
+            contentPath: '/volume/ghost/content/'
+        }
     },
 
     // ### Development **(default)**
