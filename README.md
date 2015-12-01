@@ -48,9 +48,14 @@
 
 #### 配置 Ghost
 
-您需要将环境变量 `GHOST_ROOT_URL` 的值设置为您博客的完整 URL，这样 Ghost 就能正确配置其内部的链接，例如 [http://your-ghost.daoapp.io](http://your-ghost.daoapp.io)。
+- `GHOST_ROOT_URL`
 
-第一次启动时，您可以通过 [http://your-ghost.daoapp.io/admin](http://your-ghost.daoapp.io/admin) 进入管理界面。
+  您需要将环境变量 `GHOST_ROOT_URL` 的值设置为您博客的完整 URL，这样 Ghost 就能正确配置其内部的链接，例如 [http://your-ghost.daoapp.io](http://your-ghost.daoapp.io)。
+
+  第一次启动时，您可以通过 [http://your-ghost.daoapp.io/admin](http://your-ghost.daoapp.io/admin) 进入管理界面。
+
+- `GHOST_FILE_STORAGE`
+  将此环境变量设置为 `true` 时，Ghost 将支持上传功能，但是注意需要您已将 Volume 挂载至 `/usr/src/ghost/content/images`，否则当您重新发布时，所有原先上传的图片都会丢失。
 
 ---
 

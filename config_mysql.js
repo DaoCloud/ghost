@@ -30,7 +30,7 @@ config = {
             port: '2368'
         },
         
-        fileStorage: false
+        fileStorage: process.env.GHOST_FILE_STORAGE.toLowerCase() === 'true'
     },
 
     // ### Development **(default)**

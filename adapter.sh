@@ -15,6 +15,11 @@ else
     has_url=1
 fi
 
+if [[ `echo $GHOST_FILE_STORAGE | tr '[:upper:]' '[:lower:]'` == "true" ]]; then
+    echo "WARNING: You are using local file storage, be sure"
+    echo "         you are using Volume to store your images."
+fi
+
 if [[ -n "$MYSQL_INSTANCE_NAME" ]]; then
     echo "INFO: Deploy at DaoCloud."
     is_mysql=1
