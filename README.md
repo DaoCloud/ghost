@@ -88,7 +88,7 @@ ghost:
   ports: 
     - "2368" 
   volumes:
-    - /<path_to_your_ghost>/content:/usr/src/ghost/content
+    - /data:/data
   environment:
     - GHOST_ROOT_URL=http://<your-blog-url>
   restart: always 
@@ -105,5 +105,7 @@ db:
 ## 注意
 
 由于上传的文件如图片等会保存在容器中，容器重新部署可能会导致上传文件的丢失，因此不建议您用 Ghost 存储重要文件，但是当您部署于自有主机上时可以通过 Volume 功能挂载宿主机上的目录至容器来做持久化储存。
+
+您可以将 Volume 挂载到 `/data` 目录以管理您上传到图片与主题资源。
 
 您需要设置 `GHOST_ROOT_URL` 变量来让 Ghost 能正确配置其内部的链接。
