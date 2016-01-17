@@ -8,8 +8,10 @@ export GHOST_FILE_STORAGE="false"
 
 # define volume constants
 VOLUME_PATH="/data"
+VOLUME_DATA_PATH="$VOLUME_PATH/data"
 VOLUME_THEMES_PATH="$VOLUME_PATH/themes"
 VOLUME_IMAGES_PATH="$VOLUME_PATH/images"
+GHOST_DATA_PATH="$GHOST_CONTENT/data"
 GHOST_THEMES_PATH="$GHOST_CONTENT/themes"
 GHOST_IMAGES_PATH="$GHOST_CONTENT/images"
 
@@ -41,14 +43,9 @@ if [[ -d "$VOLUME_PATH" ]]; then
         create_symbolic_link "$VOLUME_THEMES_PATH/$theme" "$GHOST_THEMES_PATH/$theme"
     done
 
+    create_symbolic_link "$VOLUME_DATA_PATH" "$GHOST_DATA_PATH"
     create_symbolic_link "$VOLUME_IMAGES_PATH" "$GHOST_IMAGES_PATH"
     chown -hR user:root "$VOLUME_PATH"
-
-fi
-
-if [[ `echo $GHOST_FILE_STORAGE | tr '[:upper:]' '[:lower:]'` == "true" ]]; then
-    echo "WARNING: You are using local file storage, be sure"
-    echo "         you are using Volume to store your images."
 fi
 
 if [[ -n "$MYSQL_INSTANCE_NAME" ]]; then
@@ -88,11 +85,6 @@ if [[ $is_mysql -eq 1 ]]; then
     echo "========================================================================"
 else
     echo "INFO: Using SQLite."
-    echo "========================================================================"
-    echo "WARNING: Using SQLite maybe will lost your all"
-    echo "         data when you deployed on DaoCloud."
-    echo "         Please use MySQL instead."
-    echo "========================================================================"
     
     cp "/opt/config_sqlite.js" "$GHOST_CONTENT/config.js"
 fi
