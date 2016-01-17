@@ -86,6 +86,9 @@ if [[ $is_mysql -eq 1 ]]; then
     echo "========================================================================"
 else
     echo "INFO: Using SQLite."
+    if [[ ! -d "$VOLUME_PATH" ]]; then
+        echo "WARNING: No Volume found, maybe you will lose your all data."
+    fi
     
     cp "/opt/config_sqlite.js" "$GHOST_CONTENT/config.js"
 fi
