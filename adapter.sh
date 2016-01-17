@@ -35,6 +35,7 @@ fi
 if [[ -d "$VOLUME_PATH" ]]; then
     export GHOST_FILE_STORAGE="true"
     
+    mkdir -p "$VOLUME_DATA_PATH"
     mkdir -p "$VOLUME_THEMES_PATH"
     mkdir -p "$VOLUME_IMAGES_PATH"
 
