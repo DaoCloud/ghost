@@ -57,6 +57,7 @@ if [[ -n "$MYSQL_INSTANCE_NAME" ]]; then
         echo "INFO: Using http://changetoyoururl.daoapp.io temporary."
     fi
     export GHOST_MYSQL_HOST=$MYSQL_PORT_3306_TCP_ADDR
+    export GHOST_MYSQL_PORT=$MYSQL_PORT_3306_TCP_PORT
     export GHOST_MYSQL_USER=$MYSQL_USERNAME
     export GHOST_MYSQL_PASSWORD=$MYSQL_PASSWORD
     export GHOST_MYSQL_DATABASE=$MYSQL_INSTANCE_NAME
