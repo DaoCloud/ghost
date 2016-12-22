@@ -61,6 +61,7 @@
 您可以通过指定下列几个环境变量的值来使用外部的 MySQL 数据库：
 
 - `GHOST_MYSQL_HOST` 数据库主机地址
+- `GHOST_MYSQL_PORT` 数据库主机端口 (不填默认为3306)
 - `GHOST_MYSQL_DATABASE` 数据库名
 - `GHOST_MYSQL_USER` 数据库用户名
 - `GHOST_MYSQL_PASSWORD` 数据库密码
@@ -69,7 +70,7 @@
 
 ```console
 $ docker run -d -e MYSQL_ROOT_PASSWORD=example -e MYSQL_USER=ghost -e MYSQL_PASSWORD=ghost -e MYSQL_DATABASE=ghost -p 3306:3306 --name mymysql mysql    # 启动了一个 MySQL 实例并暴露端口 3306
-$ docker run -d -e GHOST_MYSQL_HOST=<mysql_host_address> -e GHOST_MYSQL_USER=ghost -e GHOST_MYSQL_PASSWORD=ghost -e GHOST_MYSQL_DATABASE=ghost -p 2368:2368 dghost    # 通过环境变量指定要使用数据库的连接方式
+$ docker run -d -e GHOST_MYSQL_HOST=<mysql_host_address> -e GHOST_MYSQL_PORT=3306 -e GHOST_MYSQL_USER=ghost -e GHOST_MYSQL_PASSWORD=ghost -e GHOST_MYSQL_DATABASE=ghost -p 2368:2368 dghost    # 通过环境变量指定要使用数据库的连接方式
 ```
 
 ---
