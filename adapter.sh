@@ -83,7 +83,7 @@ if [[ $is_mysql -eq 1 ]]; then
     echo ""
     echo "  \$GHOST_ROOT_URL = ${GHOST_ROOT_URL}"
     echo "  \$GHOST_MYSQL_HOST = ${GHOST_MYSQL_HOST}"
-    echo "  \GHOST_MYSQL_PORT = ${GHOST_MYSQL_PORT}"
+    echo "  \$GHOST_MYSQL_PORT = ${GHOST_MYSQL_PORT}"
     echo "  \$GHOST_MYSQL_USER = ${GHOST_MYSQL_USER}"
     echo "  \$GHOST_MYSQL_PASSWORD = ${GHOST_MYSQL_PASSWORD}"
     echo "  \$GHOST_MYSQL_DATABASE = ${GHOST_MYSQL_DATABASE}"
