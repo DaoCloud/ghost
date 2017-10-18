@@ -1,4 +1,4 @@
-FROM ghost:0.7.1
+FROM ghost:1.14.0
 
 ADD adapter.sh /opt/adapter.sh
 ADD config_mysql.js /opt/config_mysql.js
